@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "index";
+}
+
+<h1>index</h1>
+<br>
+@DateTime.Now.ToShortDateString()
+<br>
+@{
+    var datetime = DateTime.Now.ToShortDateString();
+    var message = "merhaba";
+
+    @: bugünün tarihi : @datetime
+    <br>
+    <span>mesaj: @message</span>
+    <br />
+    <text> bugünün tarihi: @datetime</text>
+}
+
+@if (1 == 4)
+{
+    <p> doğru</p>
+}
+else if (DateTime.IsLeapYear(DateTime.Now.Year))
+{
+    <p>artık yıl</p>
+}
+else
+{
+    <p> Yanlış</p>
+
+}
+@for (var i = 0; i < 10; i++)
+{
+    <p> @i for döngüsü</p>
+}
+@foreach (var item in Enumerable.Range(0, 9).ToList())
+{
+    <p>@item forech döngüsü </p>
+}
